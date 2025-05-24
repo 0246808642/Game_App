@@ -1,6 +1,7 @@
 package com.project.Games.app.project.dto;
 
 import com.project.Games.app.project.entities.Game;
+import com.project.Games.app.project.projections.GameMinProjection;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +24,13 @@ public class GameMinDTO {
         shortDescription = entity.getShortDescription();
         title = entity.getTitle();
         year = entity.getYear();
+    }
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
+        title = projection.getTitle();
+        year = projection.getYear();
     }
 
     public Long getId() {
